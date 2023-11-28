@@ -1,14 +1,13 @@
 package br.senac.pr.exemplospringbootbasicauth.seguranca.api;
 
-import br.senac.pr.exemplospringbootbasicauth.seguranca.api.dtos.RegistrarUsuarioRequisicao;
-import br.senac.pr.exemplospringbootbasicauth.seguranca.api.dtos.VerificarUsuarioRequisicao;
+import br.senac.pr.exemplospringbootbasicauth.seguranca.api.controlador.RegistrarUsuarioRequisicao;
+import br.senac.pr.exemplospringbootbasicauth.seguranca.api.controlador.VerificarUsuarioRequisicao;
 import br.senac.pr.exemplospringbootbasicauth.seguranca.dominio.Papel;
 import br.senac.pr.exemplospringbootbasicauth.seguranca.dominio.Usuario;
 import br.senac.pr.exemplospringbootbasicauth.seguranca.dominio.UsuarioRepositorio;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,6 +36,12 @@ public class RegistroUsuarioControlador {
 
     @PostMapping
     public ResponseEntity registrar(@RequestBody @Valid RegistrarUsuarioRequisicao requisicao) {
+
+
+        // Adicionado validação de e-mail na classe Usuário.
+        if (!Usuario.isValidEmail(requisicao.getUsuario())) {
+            return ResponseEntity.badRequest().body("E-mail inválido");
+        }
 
         if (requisicao.senhasNaoConferem()) {
             return ResponseEntity.badRequest().body("Senha diferente da confirmação");

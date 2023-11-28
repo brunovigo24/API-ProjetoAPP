@@ -1,9 +1,5 @@
-package br.senac.pr.exemplospringbootbasicauth.seguranca.api.dtos;
+package br.senac.pr.exemplospringbootbasicauth.seguranca.api.controlador;
 
-import br.senac.pr.exemplospringbootbasicauth.seguranca.dominio.Papel;
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

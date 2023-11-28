@@ -1,5 +1,6 @@
-package br.senac.pr.exemplospringbootbasicauth.pessoas.dominio;
+package br.senac.pr.exemplospringbootbasicauth.pessoas.entidade;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -18,7 +19,11 @@ public class Pessoa {
     @Id
     @GeneratedValue
     private long id;
+
+    @Column(nullable = false, unique = true)
     private String nome;
+
+    @Column(nullable = false, unique = true)
     private String email;
     private LocalDate dataNascimento;
     private String departamento;

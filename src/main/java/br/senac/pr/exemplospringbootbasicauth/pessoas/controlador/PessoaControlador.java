@@ -1,7 +1,7 @@
-package br.senac.pr.exemplospringbootbasicauth.pessoas.api;
+package br.senac.pr.exemplospringbootbasicauth.pessoas.controlador;
 
-import br.senac.pr.exemplospringbootbasicauth.pessoas.dominio.Pessoa;
-import br.senac.pr.exemplospringbootbasicauth.pessoas.dominio.PessoaRepositorio;
+import br.senac.pr.exemplospringbootbasicauth.pessoas.entidade.Pessoa;
+import br.senac.pr.exemplospringbootbasicauth.pessoas.repositorio.PessoaRepositorio;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

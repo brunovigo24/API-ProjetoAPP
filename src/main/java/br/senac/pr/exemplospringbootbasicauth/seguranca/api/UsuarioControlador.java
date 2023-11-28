@@ -1,6 +1,6 @@
 package br.senac.pr.exemplospringbootbasicauth.seguranca.api;
 
-import br.senac.pr.exemplospringbootbasicauth.seguranca.api.dtos.UsuarioView;
+import br.senac.pr.exemplospringbootbasicauth.seguranca.api.controlador.UsuarioView;
 import br.senac.pr.exemplospringbootbasicauth.seguranca.dominio.UsuarioRepositorio;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
