@@ -31,6 +31,6 @@ public class Usuario {
     // Adicionado método de validação de e-mail
     public static boolean isValidEmail(@NotNull String usuario) {
         String emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$";
-        return Pattern.matches(emailRegex, this.usuario);
+        return Pattern.matches(emailRegex, usuario);
     }
 }
